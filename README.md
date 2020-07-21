@@ -6,7 +6,7 @@ This project (among a couple others) is considered the 'Hello World' of machine 
 2) Collect the data
 3) Clean/Process the data
 4) Data Exploration/Visualization
-5)
+5) Developing a Model
 
 ## 1) Defining the problem
 I would like to find a way to realistically evaluate the price of a house in Boston based on specific observations. A supervised regression model would be ideal for this situation.
@@ -36,3 +36,11 @@ At this point, I wanted to come up with some assumptions on the features and the
 - Houses that have a lower 'LSTAT' value (lower class workers) will likely be worth more. If the people are higher class workers and made more money, they likely have a higher purchasing power, resulting in a more expensive home. This would mean that 'LSTAT' and 'MEDV' are inversely proportional variables.
 
 - Lastly, houses with a lower 'PTRATIO' (less students to teachers ratio), will also likely be worth more. I am assuming this because an educational facility with more teachers to focus their attention on the students will likely be a hot spot for families who are looking for houses. This assumption would mean that 'PTRATIO' and 'MEDV' are inversely proportional variables.
+
+## 5) Developing a model
+To measure the quality of the model, I first had to define a performance metric. For this project, I defined my performance metric as the coefficient of determination, otherwise known as R^2. 
+
+The coefficient of determination is often very useful for regression analysis. The values for R^2 range from 0 to 1. An R^2 value of 0 means that there is no correlation between the predicted value from the model and the actual value. An R^2 value of 1 means that the predicted value from the model is the exact same as the actual value. The closer towards 1 the R^2 value is, the more accurate and "better" the model is.
+
+I then had to shuffle and split the data into training and testing subsets. 
+
