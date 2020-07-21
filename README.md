@@ -8,6 +8,7 @@ This project (among a couple others) is considered the 'Hello World' of machine 
 4) Data Exploration and Visualization
 5) Develop a Model
 6) Analyze the Model's Performance
+7) Evaluate the Model's Performance
 
 ## 1) Define the problem
 I would like to find a way to realistically evaluate the price of a house in Boston based on specific observations. A supervised regression model would be ideal for this situation.
@@ -61,10 +62,33 @@ I used decision tree regression to create the models. This is an algorithm that 
 
 I plotted a few diferent learning curves for models with different 'max_depth' parameters and training set sizes. Changing these parameters essentially allowed me to observe how the model's complexity affects performance. It helped me distinguish between an overfitting model (high bias), an underfitting model (high variance), and a model that works very well (low bias and variance).
 
+### Learning curves
 ![](https://i.ibb.co/xswL0fp/boston-housing-4.png)
 
 Then, I made a graph for a decision tree model that has been trained and validated on the training data using different maximum depths. There are two complexity curves - one for training and one for validation. The shaded regions represent the uncertainty/variance in the curve. 
 
+### Complexity curves
 ![](https://i.ibb.co/ZVj2Bzv/boston-housing-1.png)
 
+### Bias-Variance Tradeoff
+This is one of the most essential parts in getting a well fitted model. After graphing the learning curves and the complexity curves, I analyzed them to find the right balance between bias and variance, trying to find the point where both of the are minimized and the model is optimized.
+
+Looking at the complexity curves above, we can see that a maximum depth of 1-3 results in a low score in both the training and testing data. This means that the models with a maximum depth of 1-3 would be underfitting (have high bias). Therefore, I knew that we must increase the maximum depth in order to achieve a better performance.
+
+On the other hand, when the maximum depth is at 8-10, we can see that the training score (from the model) is very close to 1. This means that the model is very accurate. However, we can also see that the validation score has a much lower score. This illustrates overfitting (high variance). Based on this observation, along with the previous observation, I came to the conclusion that the ideal model will have a maximum depth hyperparameter with a value between 4-7.
+
+Taking a final look at the graph, I decided that a maximum depth of 4 would result in the best performing model. This is because the validation score is maximized and is relatively close to the training score when the maximum depth is at 4.
+
+## 7) Evaluating the Model's Performance
+In order to find the most optimal hyperparameters of the model, I used the grid search technique. Grid search is a process that looks for the optimal hyperparameters from subsets of options given by the user. This is a lot more scoped in, allowing for a faster and more efficient way to find the best combination of hyperparameters than a random search.
+
+Also, I incorporated K-Fold Cross Validation. This technique is used to make sure that the model is trained well, without using the test set. First, the data is split into k partitions, each of equal size. For each partition i, we train the model on the remaining k-1 parameters and evaluate it on partition i. The final score is the average of the K scores obtained. The main purpose of k-fold validation is to get an unbiased estimate of model generalization on new data.
+
+### Fitting a model
+Finally, I had to bring everything together and train a model using the decision tree algorithm. I used the grid search technique to optimize the 'max_depth' hyperparameter. This allows me to produce a well-trained model that is accurate and optimized. 
+
+Using the grid search technique, I found that the optimized value for the 'max_depth' hyperparameter was exactly what I had inferred earlier, 4.
+
+## 8) Making predictions
+Now that the model has been trained on the given data, I can use the model to make price predictions given new sets of input features.
 
