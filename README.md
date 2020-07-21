@@ -5,7 +5,7 @@ This project (among a couple others) is considered the 'Hello World' of machine 
 1) Define the problem
 2) Collect the Data
 3) Clean/Process the Data
-4) Data Exploration/Visualization
+4) Data Exploration and Visualization
 5) Develop a Model
 6) Analyze the Model's Performance
 
@@ -16,7 +16,7 @@ The model will be given various data (features) from houses that were sold in Bo
 
 ## 2) Collect the Data
 
-## 3) Clean/Process the Data
+## 3) Clean and Process the Data
 In order to use the collected data in a supervised regression model, I first had to clean the dataset. I preprocessed the data as follows:
 
 - I only used the features that I felt were the most essential ('RM', 'LSTAT', 'PTRATIO', and 'MEDV'). This helps avoid overfitting the data.
@@ -27,10 +27,13 @@ In order to use the collected data in a supervised regression model, I first had
 
 - I scaled the prices of the houses by 21000 (multiplicatively) to adjust for 35 years of market inflation.
 
-## 4) Data Exploration/Visualization
+## 4) Data Exploration and Visualization
 I calculated some basic statistics on the prices such as the minimum, maximum, mean, median, and standard deviation. 
 
-At this point, I wanted to come up with some assumptions on the features and the model in general. 
+![](https://i.ibb.co/cJmFsSp/boston-housing-5.png)
+
+### Inferences and Assumptions
+The fundamental use of data science is to help us test our inferences or assumptions that we have on a certain situation by looking into the data. Therefore, I wanted to come up with some assumptions on the features and the model in general before developing the model itself. 
 
 - Houses with a higher 'RM' value (number of rooms), will likely have a higher 'MEDV' (price) value. This assumption would mean that 'RM' and 'MEDV' are directly proportional variables.
 
@@ -63,3 +66,5 @@ I plotted a few diferent learning curves for models with different 'max_depth' p
 Then, I made a graph for a decision tree model that has been trained and validated on the training data using different maximum depths. There are two complexity curves - one for training and one for validation. The shaded regions represent the uncertainty/variance in the curve. 
 
 ![](https://i.ibb.co/ZVj2Bzv/boston-housing-1.png)
+
+
