@@ -40,6 +40,12 @@ At this point, I wanted to come up with some assumptions on the features and the
 
 To really visualize the data and help me gain insight into the data, I created both a pairplot and a correlation matrix. These plots helped me really connect the features to the target feature as well as how they work collecticely and independently to affect the target feature's outcome. 
 
+### Pairplot
+![](https://i.ibb.co/FHZhmgy/boston-housing-2.png)
+
+### Correlation Matrix (Using a heat map)
+![](https://i.ibb.co/9hprX5Q/boston-housing-2-1.png)
+
 ## 5) Develop a model
 To measure the quality of the model, I first had to define a performance metric. For this project, I defined my performance metric as the coefficient of determination, otherwise known as R^2. 
 
@@ -51,6 +57,8 @@ I then split the data into training and testing subsets. I also shuffled the dat
 I used decision tree regression to create the models. This is an algorithm that continuosly splits and tests the the dataset until it reaches the final node (prediction). 
 
 I plotted a few diferent learning curves for models with different 'max_depth' parameters and training set sizes. Changing these parameters essentially allowed me to observe how the model's complexity affects performance. It helped me distinguish between an overfitting model (high bias), an underfitting model (high variance), and a model that works very well (low bias and variance).
+
+![](https://i.ibb.co/xswL0fp/boston-housing-4.png)
 
 Then, I made a graph for a decision tree model that has been trained and validated on the training data using different maximum depths. There are two complexity curves - one for training and one for validation. The shaded regions represent the uncertainty/variance in the curve. 
 
