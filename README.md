@@ -54,4 +54,4 @@ I plotted a few diferent learning curves for models with different 'max_depth' p
 
 Then, I made a graph for a decision tree model that has been trained and validated on the training data using different maximum depths. There are two complexity curves - one for training and one for validation. The shaded regions represent the uncertainty/variance in the curve. 
 
-![alt text](https://ibb.co/c1BY6hR)
+![](https://i.ibb.co/ZVj2Bzv/boston-housing-1.png)
