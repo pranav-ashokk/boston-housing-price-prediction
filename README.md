@@ -107,4 +107,4 @@ So far, the model seems to do relatively well and has definitely learned somethi
 
 ![](https://i.ibb.co/W54NVyt/boston-housing-9.png)
 
-The range
+The range in the prices of the various trials is very large. Essentially, a range of nearly $70,000 means that our model is not very precise. Given this high variance, I have concluded that this model is not very robust and should not be used for making predictions that require precision.
