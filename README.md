@@ -111,11 +111,11 @@ From these test cases, the model I created produced the following results:
 
 ![](https://i.ibb.co/CVJgQXm/image.png)
 
-These seem like reasonable results. The third case resulted in being the most expensive house. This aligns directly with the assumptions I made about the features earlier. The 'rm' value (number of rooms) is high, the 'LSTAT' value (# of lower class workers) is low, and the 'PTRATIO' (Pupil-Teacher ratio) is also low.
+These seem like reasonable results. The third case resulted in being the most expensive house. This aligns directly with the assumptions I made about the features earlier. The 'RM' value (avg number of rooms in the neighborhood) is high, the 'LSTAT' value (% of white collar workers in the neighborhood) is low, and the 'PTRATIO' (Pupil-Teacher ratio) is also low.
 
 ## 9) Measure the model's sensitivity and applicability
 So far, the model seems to do relatively well and has definitely learned something from the data I provided. I then decided to test whether or not the model is 'robust' and can actually be applicable in real life to accurately/precisely solve the original problem. To do this, I ran the fit_model function ten times with different training and testing sets to see how the prediction for a specific client changes with respect to the data it's trained on.
 
 ![](https://i.ibb.co/W54NVyt/boston-housing-9.png)
 
-The range in the prices of the various trials is relatively large. Essentially, a range of nearly $70,000 means that this model is not as precise as I would like it to be.
+The range in the prices of the various trials is relatively large. Essentially, a range of nearly $70,000 means that this model is not as precise as I would have liked it to be, but could definitely be useful in the real estate business. However, there are many ways I can still improve this model to become even more precise. For one, instead of a decision tree generator algorithm, I could use a random forest algorithm. Furthermore, I could spend more time to tune the hyperparameters and optimize the weights of the model.
