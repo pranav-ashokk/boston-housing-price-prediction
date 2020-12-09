@@ -37,11 +37,19 @@ I calculated some basic statistics on the prices such as the minimum, maximum, m
 ![](https://i.ibb.co/cJmFsSp/boston-housing-5.png)
 
 ### Inferences and Assumptions
+First, let me explain what each of the features that will be used actually mean.
+
+- 'RM' is the average number of rooms among houses in the neighborhood
+
+- 'LSTAT' is the percentage of homeowners in the neighborhood that are white collar workers
+
+- 'PTRATIO' is the ratio of students to teachers in primary and secondary schools in the neighborhood
+
 The fundamental use of data science is to help us test our inferences or assumptions that we have on a certain situation by looking into the data. Therefore, I wanted to come up with some assumptions on the features and the model in general before developing the model itself. 
 
 - Houses with a higher 'RM' value (number of rooms), will likely have a higher 'MEDV' (price) value. This assumption would mean that 'RM' and 'MEDV' are directly proportional variables.
 
-- Houses that have a lower 'LSTAT' value (# of ) will likely be worth more. If the people are higher class workers and made more money, they likely have a higher purchasing power, resulting in a more expensive home. This would mean that 'LSTAT' and 'MEDV' are inversely proportional variables.
+- Houses that have a lower 'LSTAT' value will likely be worth more. If the homeowners are making more money, they likely have a higher purchasing power, resulting in a more expensive home. This would mean that 'LSTAT' and 'MEDV' are inversely proportional variables.
 
 - Lastly, houses with a lower 'PTRATIO' (less students to teachers ratio), will also likely be worth more. I am assuming this because an educational facility with more teachers to focus their attention on the students will likely be a hot spot for families who are looking for houses. This assumption would mean that 'PTRATIO' and 'MEDV' are inversely proportional variables.
 
@@ -110,4 +118,4 @@ So far, the model seems to do relatively well and has definitely learned somethi
 
 ![](https://i.ibb.co/W54NVyt/boston-housing-9.png)
 
-The range in the prices of the various trials is very large. Essentially, a range of nearly $70,000 means that our model is not very precise. Given this high variance, I have concluded that this model is not very robust and should not be used for making predictions that require precision.
+The range in the prices of the various trials is relatively large. Essentially, a range of nearly $70,000 means that this model is not as precise as I would like it to be.
