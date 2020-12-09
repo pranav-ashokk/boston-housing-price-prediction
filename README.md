@@ -16,6 +16,9 @@ I would like to find a way to realistically evaluate the price of a house in Bos
 The model will be given various data (features) from houses that were sold in Boston. From this data, the model should then predict the selling price of a new house in the city before it is sold based on the various features it has. In this situation, the target feature is therefore the selling price of a house in Boston.
 
 ## 2) Collect the Data
+I used the "Boston Housing" dataset created by the University of California, Irvine. I downloaded the CSV file containing this dataset from the link below.
+
+[Link to dataset](https://www.kaggle.com/schirmerchad/bostonhoustingmlnd)
 
 ## 3) Clean and Process the Data
 In order to use the collected data in a supervised regression model, I first had to clean the dataset. I preprocessed the data as follows:
@@ -38,7 +41,7 @@ The fundamental use of data science is to help us test our inferences or assumpt
 
 - Houses with a higher 'RM' value (number of rooms), will likely have a higher 'MEDV' (price) value. This assumption would mean that 'RM' and 'MEDV' are directly proportional variables.
 
-- Houses that have a lower 'LSTAT' value (lower class workers) will likely be worth more. If the people are higher class workers and made more money, they likely have a higher purchasing power, resulting in a more expensive home. This would mean that 'LSTAT' and 'MEDV' are inversely proportional variables.
+- Houses that have a lower 'LSTAT' value (# of ) will likely be worth more. If the people are higher class workers and made more money, they likely have a higher purchasing power, resulting in a more expensive home. This would mean that 'LSTAT' and 'MEDV' are inversely proportional variables.
 
 - Lastly, houses with a lower 'PTRATIO' (less students to teachers ratio), will also likely be worth more. I am assuming this because an educational facility with more teachers to focus their attention on the students will likely be a hot spot for families who are looking for houses. This assumption would mean that 'PTRATIO' and 'MEDV' are inversely proportional variables.
 
@@ -55,7 +58,7 @@ To measure the quality of the model, I first had to define a performance metric.
 
 The coefficient of determination is often very useful for regression analysis. The values for R^2 range from 0 to 1. An R^2 value of 0 means that there is no correlation between the predicted value from the model and the actual value. An R^2 value of 1 means that the predicted value from the model is the exact same as the actual value. The closer towards 1 the R^2 value is, the more accurate and "better" the model is.
 
-I then split the data into training and testing subsets. I also shuffled the data into a random order when I split the data because this removes and bias in the ordering of the data. 
+I then split the data into training and testing subsets. I also shuffled the data into a random order when I split the data because this removes any bias in the ordering of the data. 
 
 ## 6) Analyze the Model's Performance
 I used decision tree regression to create the models. This is an algorithm that continuosly splits and tests the the dataset until it reaches the final node (prediction). 
